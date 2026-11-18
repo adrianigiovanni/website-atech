@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A/TECH | Agencement Commercial & Tertiaire — Conception, Fabrication, Pose</title>
+<meta name="description" content="A/TECH conçoit, fabrique et installe des agencements sur-mesure pour les espaces commerciaux et professionnels. Banques d'accueil, mobilier, linéaires, habillages. Basé à Roubaix."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="A/TECH | Agencement Commercial & Tertiaire"/>
+<meta property="og:description" content="Conception, fabrication et pose d'agencements sur-mesure pour commerces, agences et bureaux professionnels."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="canonical" href="https://atech-agencement.fr/"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "anthracite": "#2D2D2D",
+        "acier": "#5A5A5A",
+        "sable": "#F5F2ED",
+        "bois": "#C4A882",
+        "gris-clair": "#E8E4DF",
+        "gris-moyen": "#9A9590",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  html { scroll-behavior: smooth; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body class="bg-sable text-anthracite font-sans selection:bg-bois/30 selection:text-anthracite">
+
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-sable/95 backdrop-blur-md border-b border-gris-clair">
+  <div class="flex justify-between items-center w-full px-6 md:px-12 py-4 max-w-[1280px] mx-auto">
+    <a href="index.html"><img src="assets/logo-atech.jpg" alt="A/TECH Agencement" class="h-10 w-auto" style="mix-blend-mode:multiply"/></a>
+    <nav class="hidden md:flex gap-8">
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="#savoir-faire">Savoir-faire</a>
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="projets.html">Réalisations</a>
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="#methode">Méthode</a>
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="#a-propos">À propos</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="#contact" class="hidden md:inline-block bg-anthracite text-sable px-5 py-2.5 text-sm font-semibold hover:bg-anthracite/90 transition-colors">Nous contacter</a>
+      <button id="burger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Ouvrir le menu">
+        <span class="block w-6 h-0.5 bg-anthracite transition-all" id="burger-top"></span>
+        <span class="block w-6 h-0.5 bg-anthracite transition-all" id="burger-mid"></span>
+        <span class="block w-6 h-0.5 bg-anthracite transition-all" id="burger-bot"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-sable border-t border-gris-clair">
+    <nav class="flex flex-col px-6 py-6 gap-5">
+      <a class="text-anthracite font-medium" href="#savoir-faire" onclick="closeMobileMenu()">Savoir-faire</a>
+      <a class="text-anthracite font-medium" href="projets.html">Réalisations</a>
+      <a class="text-anthracite font-medium" href="#methode" onclick="closeMobileMenu()">Méthode</a>
+      <a class="text-anthracite font-medium" href="#a-propos" onclick="closeMobileMenu()">À propos</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="bg-anthracite text-sable px-5 py-2.5 text-sm font-semibold text-center">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-16">
+
+<!-- Hero -->
+<section class="relative min-h-[85vh] flex items-end overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover" alt="Banque d'accueil sur-mesure en bois clair et anthracite, réalisée par A/TECH" src="assets/images/site/accueil-agencement.webp"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-anthracite/90 via-anthracite/40 to-anthracite/10"></div>
+  </div>
+  <div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 pb-16 md:pb-24">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-white leading-[1.15] tracking-tight mb-6">
+        Nous concevons, fabriquons et posons vos agencements sur-mesure.
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed">
+        Espaces commerciaux, agences, bureaux professionnels. Du relevé terrain à la livraison clé en main.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="projets.html" class="bg-white text-anthracite px-6 py-3.5 font-semibold text-sm flex items-center gap-2 hover:bg-gris-clair transition-colors">
+          Voir nos réalisations
+          <span class="material-symbols-outlined text-xl">arrow_forward</span>
+        </a>
+        <a href="#contact" class="border border-white/40 text-white px-6 py-3.5 font-semibold text-sm hover:bg-white/10 transition-colors">
+          Parler de votre projet
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ce que nous réalisons -->
+<section id="savoir-faire" class="py-20 md:py-28 bg-white scroll-mt-16">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <div class="mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold text-anthracite tracking-tight mb-4">Ce que nous réalisons</h2>
+      <p class="text-acier max-w-xl text-lg">
+        Banques d'accueil, caisses, linéaires, mobilier technique, habillages muraux, séparations et aménagements complets.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Card 1 -->
+      <div class="bg-sable p-7 group">
+        <span class="material-symbols-outlined text-3xl text-bois mb-5 block">store</span>
+        <h3 class="text-lg font-bold text-anthracite mb-2">Agencement commercial</h3>
+        <p class="text-acier text-sm leading-relaxed">Boutiques, magasins, pharmacies. Mobilier de vente, linéaires, gondoles, zones d'encaissement et signalétique intégrée.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-sable p-7 group">
+        <span class="material-symbols-outlined text-3xl text-bois mb-5 block">corporate_fare</span>
+        <h3 class="text-lg font-bold text-anthracite mb-2">Agencement tertiaire</h3>
+        <p class="text-acier text-sm leading-relaxed">Agences, bureaux, espaces d'accueil. Banques d'accueil, postes de travail, cloisons et rangements intégrés.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-sable p-7 group">
+        <span class="material-symbols-outlined text-3xl text-bois mb-5 block">carpenter</span>
+        <h3 class="text-lg font-bold text-anthracite mb-2">Mobilier sur-mesure</h3>
+        <p class="text-acier text-sm leading-relaxed">Comptoirs, meubles d'accueil, présentoirs, claustras bois, habillages muraux. Conçus et fabriqués selon vos contraintes.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-sable p-7 group">
+        <span class="material-symbols-outlined text-3xl text-bois mb-5 block">construction</span>
+        <h3 class="text-lg font-bold text-anthracite mb-2">Rénovation & transformation</h3>
+        <p class="text-acier text-sm leading-relaxed">Rénovation complète d'espaces professionnels. Sols, plafonds, électricité, peinture, remise aux normes et coordination tous corps d'état.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Réalisations -->
+<section class="py-20 md:py-28 bg-sable overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12 mb-10">
+    <div class="flex flex-col md:flex-row justify-between items-baseline gap-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-anthracite tracking-tight">Nos réalisations</h2>
+      <a class="text-acier font-medium text-sm flex items-center gap-1.5 hover:text-anthracite transition-colors border-b border-acier/40 pb-0.5" href="projets.html">
+        Voir tous les projets
+        <span class="material-symbols-outlined text-lg">east</span>
+      </a>
+    </div>
+  </div>
+  <div class="flex gap-5 overflow-x-auto pb-8 px-6 md:px-12 no-scrollbar">
+    <!-- Projet 1 -->
+    <div class="flex-none w-[320px] md:w-[480px] group">
+      <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="Comptoir d'accueil Century 21 Rouen — sur-mesure A/TECH" src="assets/images/century21-rouen/century21-rouen-01.jpg"/>
+      </div>
+      <div class="mt-4">
+        <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">Agence · Rouen · Client : Hollywood</p>
+        <h3 class="text-lg font-bold text-anthracite mt-1">Century 21 — Rouen</h3>
+      </div>
+    </div>
+    <!-- Projet 2 -->
+    <div class="flex-none w-[320px] md:w-[480px] group">
+      <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="Agencement pharmacie Noisy-le-Grand — comptoirs et linéaires" src="assets/images/pharmacie-noisy/pharmacie-noisy-01.jpg"/>
+      </div>
+      <div class="mt-4">
+        <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">Boutique · Noisy-le-Grand · Client : HMY</p>
+        <h3 class="text-lg font-bold text-anthracite mt-1">Pharmacie — Noisy-le-Grand</h3>
+      </div>
+    </div>
+    <!-- Projet 3 -->
+    <div class="flex-none w-[320px] md:w-[480px] group">
+      <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="Remodeling CCV Hénin-Beaumont — agencement A/TECH" src="assets/images/ccv-henin/ccv-henin-01.jpg"/>
+      </div>
+      <div class="mt-4">
+        <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">Boutique · Hénin-Beaumont · Client : Standis</p>
+        <h3 class="text-lg font-bold text-anthracite mt-1">CCV — Hénin-Beaumont</h3>
+      </div>
+    </div>
+    <!-- Projet 4 -->
+    <div class="flex-none w-[320px] md:w-[480px] group">
+      <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="Ligne de caisse Intermarché Somain — installation A/TECH" src="assets/images/intermarche-somain/intermarche-somain-01.jpg"/>
+      </div>
+      <div class="mt-4">
+        <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">GMS · Somain · Grande Distribution</p>
+        <h3 class="text-lg font-bold text-anthracite mt-1">Intermarché — Somain</h3>
+      </div>
+    </div>
+    <!-- Projet 5 -->
+    <div class="flex-none w-[320px] md:w-[480px] group">
+      <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="Sas d'entrée LIDL Le Mesnil-en-Telle — A/TECH" src="assets/images/lidl-mesnil/lidl-mesnil-01.jpg"/>
+      </div>
+      <div class="mt-4">
+        <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">GMS · Le Mesnil-en-Telle · Client : Hollywood</p>
+        <h3 class="text-lg font-bold text-anthracite mt-1">LIDL — Le Mesnil-en-Telle</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Notre méthode -->
+<section id="methode" class="py-20 md:py-28 bg-white scroll-mt-16">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <div class="mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold text-anthracite tracking-tight mb-4">Notre méthode</h2>
+      <p class="text-acier max-w-xl text-lg">Une approche terrain, du relevé à la pose. Chaque étape est pilotée en direct par nos gérants.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-0">
+      <div class="border-l-[3px] md:border-l-0 md:border-t-[3px] border-bois p-6 md:pt-8">
+        <span class="text-4xl font-bold text-gris-clair block mb-3">01</span>
+        <h3 class="text-base font-bold text-anthracite mb-2">Relevé & étude</h3>
+        <p class="text-acier text-sm leading-relaxed">Visite sur site, prise de cotes, analyse des contraintes. Plans techniques et visualisations 3D.</p>
+      </div>
+      <div class="border-l-[3px] md:border-l-0 md:border-t-[3px] border-gris-clair p-6 md:pt-8">
+        <span class="text-4xl font-bold text-gris-clair block mb-3">02</span>
+        <h3 class="text-base font-bold text-anthracite mb-2">Conception & devis</h3>
+        <p class="text-acier text-sm leading-relaxed">Choix des matériaux, dimensionnement technique, devis détaillé poste par poste. Pas de surprise.</p>
+      </div>
+      <div class="border-l-[3px] md:border-l-0 md:border-t-[3px] border-bois p-6 md:pt-8">
+        <span class="text-4xl font-bold text-gris-clair block mb-3">03</span>
+        <h3 class="text-base font-bold text-anthracite mb-2">Fabrication</h3>
+        <p class="text-acier text-sm leading-relaxed">Production du mobilier et des éléments d'agencement dans nos ateliers partenaires. Contrôle qualité avant livraison.</p>
+      </div>
+      <div class="border-l-[3px] md:border-l-0 md:border-t-[3px] border-gris-clair p-6 md:pt-8">
+        <span class="text-4xl font-bold text-gris-clair block mb-3">04</span>
+        <h3 class="text-base font-bold text-anthracite mb-2">Pose & livraison</h3>
+        <p class="text-acier text-sm leading-relaxed">Installation par nos équipes, coordination chantier, finitions et réception. Suivi post-livraison inclus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pourquoi travailler avec nous -->
+<section class="py-20 md:py-28 bg-anthracite text-white">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-14">Pourquoi travailler avec nous</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="border-l-[3px] border-bois pl-6">
+        <h3 class="text-base font-bold mb-2">Réactivité</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Réponse sous 24h, devis détaillé sous 48h. On sait que vos chantiers n'attendent pas.</p>
+      </div>
+      <div class="border-l-[3px] border-bois pl-6">
+        <h3 class="text-base font-bold mb-2">Un seul interlocuteur</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Vous traitez directement avec ceux qui pilotent votre projet. Pas d'intermédiaire, pas de perte d'information.</p>
+      </div>
+      <div class="border-l-[3px] border-bois pl-6">
+        <h3 class="text-base font-bold mb-2">100% sur-mesure</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Aucun projet standardisé. Chaque agencement est conçu pour le lieu, l'usage et les contraintes réelles.</p>
+      </div>
+      <div class="border-l-[3px] border-bois pl-6">
+        <h3 class="text-base font-bold mb-2">Chantier maîtrisé</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Coordination tous corps d'état, respect des délais, suivi terrain permanent. On livre ce qu'on a promis.</p>
+      </div>
+      <div class="border-l-[3px] border-bois pl-6">
+        <h3 class="text-base font-bold mb-2">Transparence</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Devis clairs et détaillés poste par poste. Aucun surcoût caché, aucune mauvaise surprise à la livraison.</p>
+      </div>
+      <div class="border-l-[3px] border-bois pl-6">
+        <h3 class="text-base font-bold mb-2">Suivi après livraison</h3>
+        <p class="text-white/70 text-sm leading-relaxed">SAV réactif et accompagnement pour vos évolutions futures. On reste disponibles après la pose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À propos -->
+<section id="a-propos" class="py-20 md:py-28 bg-white scroll-mt-16">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+    <div class="relative">
+      <div class="aspect-[4/5] bg-gris-clair overflow-hidden">
+        <img class="w-full h-full object-cover" alt="Julien Tiago et Rami Ajvazi, co-gérants A/TECH, sur un chantier" src="assets/images/site/equipe-chantier.webp"/>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-anthracite tracking-tight mb-6">Julien Tiago & Rami Ajvazi</h2>
+      <div class="space-y-4 text-acier leading-relaxed">
+        <p>A/TECH, c'est une structure à taille humaine créée par deux professionnels de l'agencement. Julien et Rami ont plus de 15 ans d'expérience terrain dans le commerce et le tertiaire.</p>
+        <p>Leur parti pris : rester proches du chantier, traiter en direct avec chaque client, et maîtriser le projet de A à Z — de la conception au dernier coup de tournevis.</p>
+        <p>Pas de couche commerciale entre vous et ceux qui font le travail. C'est ce qui fait la différence.</p>
+      </div>
+      <div class="mt-8 flex gap-8">
+        <div class="border-l-[3px] border-bois pl-5">
+          <p class="text-2xl font-bold text-anthracite">15+</p>
+          <p class="text-sm text-gris-moyen">années d'expérience</p>
+        </div>
+        <div class="border-l-[3px] border-bois pl-5">
+          <p class="text-2xl font-bold text-anthracite">2</p>
+          <p class="text-sm text-gris-moyen">gérants opérationnels</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 md:py-28 bg-sable scroll-mt-16">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <div class="bg-white overflow-hidden flex flex-col md:flex-row">
+      <div class="md:w-1/2 p-8 md:p-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-anthracite mb-3">Un projet d'agencement ?</h2>
+        <p class="text-acier text-sm mb-8">Décrivez-nous votre besoin, on vous répond sous 24h avec une première analyse.</p>
+        <form class="space-y-5" onsubmit="event.preventDefault(); alert('Merci pour votre message. Nous vous recontacterons rapidement.');">
+          <div>
+            <label class="block text-sm font-medium text-anthracite mb-1.5" for="name">Nom</label>
+            <input id="name" class="w-full bg-sable border border-gris-clair focus:ring-2 focus:ring-bois focus:border-bois py-3 px-4 text-anthracite text-sm" placeholder="Votre nom" type="text" required/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-anthracite mb-1.5" for="email">Email</label>
+            <input id="email" class="w-full bg-sable border border-gris-clair focus:ring-2 focus:ring-bois focus:border-bois py-3 px-4 text-anthracite text-sm" placeholder="contact@votreentreprise.fr" type="email" required/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-anthracite mb-1.5" for="message">Votre projet</label>
+            <textarea id="message" class="w-full bg-sable border border-gris-clair focus:ring-2 focus:ring-bois focus:border-bois py-3 px-4 text-anthracite text-sm" placeholder="Type d'espace, surface, contraintes, délais..." rows="4" required></textarea>
+          </div>
+          <button class="w-full bg-anthracite text-white font-semibold py-3.5 text-sm hover:bg-anthracite/90 transition-colors" type="submit">
+            Envoyer
+          </button>
+        </form>
+      </div>
+      <div class="md:w-1/2 bg-anthracite p-8 md:p-14 text-white flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg font-bold mb-8">Coordonnées</h3>
+          <div class="space-y-8">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-bois text-xl mt-0.5">location_on</span>
+              <div>
+                <p class="font-medium text-sm">A/TECH</p>
+                <p class="text-white/60 text-sm">178 rue d'Alger, 59100 Roubaix</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-bois text-xl mt-0.5">call</span>
+              <div>
+                <p class="font-medium text-sm">Téléphone</p>
+                <p class="text-white/60 text-sm">+33 (0)3 20 00 00 00</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-bois text-xl mt-0.5">mail</span>
+              <div>
+                <p class="font-medium text-sm">Email</p>
+                <p class="text-white/60 text-sm">contact@atech-agencement.fr</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-bois text-xl mt-0.5">badge</span>
+              <div>
+                <p class="font-medium text-sm">SIREN</p>
+                <p class="text-white/60 text-sm">880 197 694</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-anthracite text-white border-t border-white/10">
+  <div class="flex flex-col md:flex-row justify-between gap-10 px-6 md:px-12 py-14 max-w-[1280px] mx-auto">
+    <div>
+      <a href="index.html"><img src="assets/logo-atech.jpg" alt="A/TECH Agencement" class="h-10 w-auto" style="mix-blend-mode:multiply;filter:brightness(0) invert(1)"/></a>
+      <p class="text-white/40 text-sm mt-3 max-w-xs">Conception, fabrication et pose d'agencements sur-mesure pour les espaces commerciaux et professionnels.</p>
+    </div>
+    <div class="flex gap-12 md:gap-16 text-sm">
+      <div class="space-y-3">
+        <p class="text-white/30 font-medium text-xs uppercase tracking-wider">Navigation</p>
+        <a class="block text-white/50 hover:text-white transition-colors" href="#savoir-faire">Savoir-faire</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="projets.html">Réalisations</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="#a-propos">À propos</a>
+      </div>
+      <div class="space-y-3">
+        <p class="text-white/30 font-medium text-xs uppercase tracking-wider">Légal & social</p>
+        <a class="block text-white/50 hover:text-white transition-colors" href="mentions-legales.html">Mentions légales</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="https://www.linkedin.com/company/atech-entreprise/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="https://www.instagram.com/atech.agencement/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-6 md:px-12 py-5 max-w-[1280px] mx-auto">
+    <p class="text-white/30 text-xs">&copy; 2025 A/TECH. Tous droits réservés. SIREN : 880 197 694. Roubaix, France.</p>
+  </div>
+</footer>
+
+<!-- Mobile menu JS -->
+<script>
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+const burgerTop = document.getElementById('burger-top');
+const burgerMid = document.getElementById('burger-mid');
+const burgerBot = document.getElementById('burger-bot');
+let menuOpen = false;
+
+burger.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenu.classList.toggle('hidden');
+  if (menuOpen) {
+    burgerTop.style.transform = 'rotate(45deg) translate(4px, 4px)';
+    burgerMid.style.opacity = '0';
+    burgerBot.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+  } else {
+    burgerTop.style.transform = '';
+    burgerMid.style.opacity = '1';
+    burgerBot.style.transform = '';
+  }
+});
+
+function closeMobileMenu() {
+  menuOpen = false;
+  mobileMenu.classList.add('hidden');
+  burgerTop.style.transform = '';
+  burgerMid.style.opacity = '1';
+  burgerBot.style.transform = '';
+}
+</script>
+
+</body>
+</html>

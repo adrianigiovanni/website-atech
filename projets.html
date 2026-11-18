@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos Réalisations | A/TECH — Agencement Commercial & Tertiaire</title>
+<meta name="description" content="Galerie des réalisations A/TECH : agencement de boutiques, agences, pharmacies, grande distribution. Mobilier sur-mesure, pose et rénovation."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="Nos Réalisations | A/TECH"/>
+<meta property="og:description" content="Découvrez nos chantiers d'agencement commercial et tertiaire : boutiques, agences, GMS."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="canonical" href="https://atech-agencement.fr/projets.html"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "anthracite": "#2D2D2D",
+        "acier": "#5A5A5A",
+        "sable": "#F5F2ED",
+        "bois": "#C4A882",
+        "gris-clair": "#E8E4DF",
+        "gris-moyen": "#9A9590",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  html { scroll-behavior: smooth; }
+  .filter-btn.active { background-color: #2D2D2D; color: #F5F2ED; }
+  .project-card { transition: opacity 0.4s, transform 0.4s; }
+  .project-card.hidden-card { opacity: 0; transform: scale(0.95); position: absolute; pointer-events: none; }
+  .thumb { opacity: 0.5; transition: opacity 0.2s; cursor: pointer; }
+  .thumb.active { opacity: 1; outline: 2px solid #C4A882; outline-offset: 2px; }
+  .thumb:hover { opacity: 0.8; }
+  #lightbox { transition: opacity 0.3s; }
+</style>
+</head>
+<body class="bg-sable text-anthracite font-sans selection:bg-bois/30 selection:text-anthracite">
+
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-sable/95 backdrop-blur-md border-b border-gris-clair">
+  <div class="flex justify-between items-center w-full px-6 md:px-12 py-4 max-w-[1280px] mx-auto">
+    <a href="index.html"><img src="assets/logo-atech.jpg" alt="A/TECH Agencement" class="h-10 w-auto" style="mix-blend-mode:multiply"/></a>
+    <nav class="hidden md:flex gap-8">
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="index.html#savoir-faire">Savoir-faire</a>
+      <a class="text-anthracite text-sm font-semibold border-b-2 border-anthracite pb-0.5" href="projets.html">Réalisations</a>
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="index.html#methode">Méthode</a>
+      <a class="text-acier text-sm font-medium hover:text-anthracite transition-colors" href="index.html#a-propos">À propos</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="index.html#contact" class="hidden md:inline-block bg-anthracite text-sable px-5 py-2.5 text-sm font-semibold hover:bg-anthracite/90 transition-colors">Nous contacter</a>
+      <button id="burger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Ouvrir le menu">
+        <span class="block w-6 h-0.5 bg-anthracite transition-all" id="burger-top"></span>
+        <span class="block w-6 h-0.5 bg-anthracite transition-all" id="burger-mid"></span>
+        <span class="block w-6 h-0.5 bg-anthracite transition-all" id="burger-bot"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-sable border-t border-gris-clair">
+    <nav class="flex flex-col px-6 py-6 gap-5">
+      <a class="text-anthracite font-medium" href="index.html#savoir-faire">Savoir-faire</a>
+      <a class="text-anthracite font-medium" href="projets.html">Réalisations</a>
+      <a class="text-anthracite font-medium" href="index.html#methode">Méthode</a>
+      <a class="text-anthracite font-medium" href="index.html#a-propos">À propos</a>
+      <a href="index.html#contact" class="bg-anthracite text-sable px-5 py-2.5 text-sm font-semibold text-center">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-16">
+
+<!-- Hero -->
+<section class="py-16 md:py-20 bg-anthracite">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Nos réalisations</h1>
+    <p class="text-white/60 text-lg max-w-xl">Chaque projet est une réponse concrète à un besoin terrain. Agencement, mobilier, pose — voici ce que nous savons faire.</p>
+  </div>
+</section>
+
+<!-- Filtres -->
+<section class="py-5 bg-sable sticky top-[61px] z-40 border-b border-gris-clair">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <div class="flex flex-wrap gap-2">
+      <button class="filter-btn active px-4 py-2 text-sm font-medium transition-all" data-filter="all">Tous</button>
+      <button class="filter-btn px-4 py-2 text-sm font-medium transition-all bg-gris-clair text-acier hover:bg-anthracite hover:text-sable" data-filter="boutique">Boutique & Retail</button>
+      <button class="filter-btn px-4 py-2 text-sm font-medium transition-all bg-gris-clair text-acier hover:bg-anthracite hover:text-sable" data-filter="agence">Agences</button>
+      <button class="filter-btn px-4 py-2 text-sm font-medium transition-all bg-gris-clair text-acier hover:bg-anthracite hover:text-sable" data-filter="gms">GMS & Grande Distribution</button>
+    </div>
+  </div>
+</section>
+
+<!-- Grille de projets -->
+<section class="py-12 md:py-16 bg-sable">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12">
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!--
+        =============================================
+        COMMENT AJOUTER / MODIFIER UN PROJET
+        =============================================
+
+        Chaque projet est un bloc <div class="project-card">.
+        Pour ajouter des photos, il suffit de modifier le data-images :
+
+        data-images="photo1.jpg, photo2.jpg, photo3.jpg"
+
+        - Séparer chaque photo par une virgule
+        - Les chemins sont relatifs au dossier assets/images/
+        - La première photo est affichée par défaut
+        - Les miniatures apparaissent automatiquement s'il y a 2+ photos
+        - Cliquer sur la grande photo ouvre la lightbox plein écran
+
+        Pour ajouter un nouveau projet, copier un bloc existant et modifier :
+        - data-category : agence, boutique, ou gms
+        - data-images : liste des photos
+        - Le texte (catégorie, titre, description)
+      -->
+
+      <!-- Projet 1 — Century 21 Rouen : accueil -->
+      <div class="project-card" data-category="agence"
+           data-images="assets/images/century21-rouen/century21-rouen-01.jpg, assets/images/century21-rouen/century21-rouen-02.jpg, assets/images/century21-rouen/century21-rouen-03.jpg, assets/images/century21-rouen/century21-rouen-04.jpg, assets/images/century21-rouen/century21-rouen-05.jpg, assets/images/century21-rouen/century21-rouen-06.jpg, assets/images/century21-rouen/century21-rouen-07.jpg, assets/images/century21-rouen/century21-rouen-08.jpg, assets/images/century21-rouen/century21-rouen-09.jpg">
+        <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair cursor-pointer main-image-wrap">
+          <img class="main-img w-full h-full object-cover transition-all duration-500" alt="Comptoir d'accueil Century 21 Rouen — sur-mesure A/TECH"/>
+        </div>
+        <div class="thumbs-row flex gap-1.5 mt-1.5"></div>
+        <div class="mt-3">
+          <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">Agence · Rouen · Client : Hollywood</p>
+          <h3 class="text-base font-bold text-anthracite mt-1">Century 21 — Rouen</h3>
+          <p class="text-acier text-sm mt-1.5">Déploiement du nouveau concept Century 21. Comptoir d'accueil sur-mesure, habillage mural et espace client repensé.</p>
+        </div>
+      </div>
+
+      <!-- Projet 3 — Pharmacie Noisy -->
+      <div class="project-card" data-category="boutique"
+           data-images="assets/images/pharmacie-noisy/pharmacie-noisy-01.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-02.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-03.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-04.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-05.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-06.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-07.jpg, assets/images/pharmacie-noisy/pharmacie-noisy-08.jpg">
+        <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair cursor-pointer main-image-wrap">
+          <img class="main-img w-full h-full object-cover transition-all duration-500" alt="Agencement pharmacie Noisy-le-Grand — comptoirs et linéaires"/>
+        </div>
+        <div class="thumbs-row flex gap-1.5 mt-1.5"></div>
+        <div class="mt-3">
+          <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">Boutique · Noisy-le-Grand · Client : HMY</p>
+          <h3 class="text-base font-bold text-anthracite mt-1">Pharmacie — Noisy-le-Grand</h3>
+          <p class="text-acier text-sm mt-1.5">Agencement complet d'une officine. Comptoirs de dispensation, linéaires parapharmacie bois et métal, espace conseil.</p>
+        </div>
+      </div>
+
+      <!-- Projet 4 — Intermarché Somain -->
+      <div class="project-card" data-category="gms"
+           data-images="assets/images/intermarche-somain/intermarche-somain-01.jpg, assets/images/intermarche-somain/intermarche-somain-02.jpg">
+        <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair cursor-pointer main-image-wrap">
+          <img class="main-img w-full h-full object-cover transition-all duration-500" alt="Ligne de caisse Intermarché Somain — installation A/TECH"/>
+        </div>
+        <div class="thumbs-row flex gap-1.5 mt-1.5"></div>
+        <div class="mt-3">
+          <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">GMS · Somain · Grande Distribution</p>
+          <h3 class="text-base font-bold text-anthracite mt-1">Intermarché — Somain</h3>
+          <p class="text-acier text-sm mt-1.5">Installation complète de la ligne de caisse. Pose des modules caisses, habillage sol et raccordement électrique.</p>
+        </div>
+      </div>
+
+      <!-- Projet 5 — CCV Hénin-Beaumont -->
+      <div class="project-card" data-category="boutique"
+           data-images="assets/images/ccv-henin/ccv-henin-01.jpg, assets/images/ccv-henin/ccv-henin-02.jpg, assets/images/ccv-henin/ccv-henin-03.jpg, assets/images/ccv-henin/ccv-henin-04.jpg, assets/images/ccv-henin/ccv-henin-05.jpg, assets/images/ccv-henin/ccv-henin-06.jpg, assets/images/ccv-henin/ccv-henin-07.jpg">
+        <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair cursor-pointer main-image-wrap">
+          <img class="main-img w-full h-full object-cover transition-all duration-500" alt="Remodeling CCV Hénin-Beaumont — agencement A/TECH"/>
+        </div>
+        <div class="thumbs-row flex gap-1.5 mt-1.5"></div>
+        <div class="mt-3">
+          <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">Boutique · Hénin-Beaumont · Client : Standis</p>
+          <h3 class="text-base font-bold text-anthracite mt-1">CCV — Hénin-Beaumont</h3>
+          <p class="text-acier text-sm mt-1.5">Remodeling complet du magasin. Nouveau concept Standis : rayonnages, mobilier de présentation et signalétique intégrée.</p>
+        </div>
+      </div>
+
+      <!-- Projet 6 — LIDL Le Mesnil -->
+      <div class="project-card" data-category="gms"
+           data-images="assets/images/lidl-mesnil/lidl-mesnil-01.jpg, assets/images/lidl-mesnil/lidl-mesnil-02.jpg, assets/images/lidl-mesnil/lidl-mesnil-03.jpg, assets/images/lidl-mesnil/lidl-mesnil-04.jpg, assets/images/lidl-mesnil/lidl-mesnil-05.jpg, assets/images/lidl-mesnil/lidl-mesnil-06.jpg, assets/images/lidl-mesnil/lidl-mesnil-07.jpg, assets/images/lidl-mesnil/lidl-mesnil-08.jpg">
+        <div class="aspect-[4/3] overflow-hidden relative bg-gris-clair cursor-pointer main-image-wrap">
+          <img class="main-img w-full h-full object-cover transition-all duration-500" alt="Sas d'entrée LIDL Le Mesnil-en-Telle — A/TECH"/>
+        </div>
+        <div class="thumbs-row flex gap-1.5 mt-1.5"></div>
+        <div class="mt-3">
+          <p class="text-xs text-gris-moyen font-medium uppercase tracking-wide">GMS · Le Mesnil-en-Telle · Client : Hollywood</p>
+          <h3 class="text-base font-bold text-anthracite mt-1">LIDL — Le Mesnil-en-Telle</h3>
+          <p class="text-acier text-sm mt-1.5">Installation du sas d'entrée. Pose des structures, habillage et finitions pour le client Hollywood.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 md:py-20 bg-anthracite">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-12 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">Un projet similaire ?</h2>
+    <p class="text-white/60 text-lg max-w-lg mx-auto mb-8">Décrivez-nous votre besoin. On vous répond sous 24h avec une première analyse.</p>
+    <a href="index.html#contact" class="inline-flex items-center gap-2 bg-white text-anthracite px-6 py-3.5 font-semibold text-sm hover:bg-gris-clair transition-colors">
+      Parler de votre projet
+      <span class="material-symbols-outlined text-lg">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- Lightbox plein écran -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-anthracite/95 hidden items-center justify-center" onclick="closeLightbox(event)">
+  <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-white z-10">
+    <span class="material-symbols-outlined text-3xl">close</span>
+  </button>
+  <button id="lb-prev" onclick="lbNav(-1); event.stopPropagation();" class="absolute left-4 md:left-8 text-white/50 hover:text-white z-10">
+    <span class="material-symbols-outlined text-4xl">chevron_left</span>
+  </button>
+  <button id="lb-next" onclick="lbNav(1); event.stopPropagation();" class="absolute right-4 md:right-8 text-white/50 hover:text-white z-10">
+    <span class="material-symbols-outlined text-4xl">chevron_right</span>
+  </button>
+  <img id="lb-img" class="max-w-[90vw] max-h-[85vh] object-contain" alt="" onclick="event.stopPropagation()"/>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm" id="lb-counter"></div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-anthracite text-white border-t border-white/10">
+  <div class="flex flex-col md:flex-row justify-between gap-10 px-6 md:px-12 py-14 max-w-[1280px] mx-auto">
+    <div>
+      <a href="index.html"><img src="assets/logo-atech.jpg" alt="A/TECH Agencement" class="h-10 w-auto" style="filter:brightness(0) invert(1)"/></a>
+      <p class="text-white/40 text-sm mt-3 max-w-xs">Conception, fabrication et pose d'agencements sur-mesure pour les espaces commerciaux et professionnels.</p>
+    </div>
+    <div class="flex gap-12 md:gap-16 text-sm">
+      <div class="space-y-3">
+        <p class="text-white/30 font-medium text-xs uppercase tracking-wider">Navigation</p>
+        <a class="block text-white/50 hover:text-white transition-colors" href="index.html#savoir-faire">Savoir-faire</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="projets.html">Réalisations</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="index.html#a-propos">À propos</a>
+      </div>
+      <div class="space-y-3">
+        <p class="text-white/30 font-medium text-xs uppercase tracking-wider">Légal & social</p>
+        <a class="block text-white/50 hover:text-white transition-colors" href="mentions-legales.html">Mentions légales</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="https://www.linkedin.com/company/atech-entreprise/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="block text-white/50 hover:text-white transition-colors" href="https://www.instagram.com/atech.agencement/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-6 md:px-12 py-5 max-w-[1280px] mx-auto">
+    <p class="text-white/30 text-xs">&copy; 2025 A/TECH. Tous droits réservés. SIREN : 880 197 694. Roubaix, France.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Mobile menu
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+const burgerTop = document.getElementById('burger-top');
+const burgerMid = document.getElementById('burger-mid');
+const burgerBot = document.getElementById('burger-bot');
+let menuOpen = false;
+
+burger.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenu.classList.toggle('hidden');
+  if (menuOpen) {
+    burgerTop.style.transform = 'rotate(45deg) translate(4px, 4px)';
+    burgerMid.style.opacity = '0';
+    burgerBot.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+  } else {
+    burgerTop.style.transform = '';
+    burgerMid.style.opacity = '1';
+    burgerBot.style.transform = '';
+  }
+});
+
+// Filtres projets
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+    filterBtns.forEach(b => {
+      b.classList.remove('active');
+      b.classList.add('bg-gris-clair', 'text-acier');
+    });
+    btn.classList.add('active');
+    btn.classList.remove('bg-gris-clair', 'text-acier');
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.classList.remove('hidden-card');
+        card.style.display = '';
+      } else {
+        card.classList.add('hidden-card');
+        setTimeout(() => { card.style.display = 'none'; }, 400);
+      }
+    });
+  });
+});
+
+// =============================================
+// GALERIE MULTI-PHOTOS
+// =============================================
+// Initialise chaque carte projet :
+// - Lit le data-images pour récupérer la liste des photos
+// - Affiche la première photo en grand
+// - Génère les miniatures s'il y a 2+ photos
+// - Clic sur la grande photo = lightbox plein écran
+
+projectCards.forEach(card => {
+  const raw = card.dataset.images;
+  if (!raw) return;
+  const images = raw.split(',').map(s => s.trim()).filter(Boolean);
+  if (images.length === 0) return;
+
+  const mainImg = card.querySelector('.main-img');
+  const thumbsRow = card.querySelector('.thumbs-row');
+  let current = 0;
+
+  // Afficher la première image
+  mainImg.src = images[0];
+
+  // Générer les miniatures (seulement si 2+ photos)
+  if (images.length > 1) {
+    images.forEach((src, i) => {
+      const t = document.createElement('img');
+      t.src = src;
+      t.alt = '';
+      t.className = 'thumb w-12 h-9 object-cover' + (i === 0 ? ' active' : '');
+      t.addEventListener('click', (e) => {
+        e.stopPropagation();
+        current = i;
+        mainImg.src = images[i];
+        thumbsRow.querySelectorAll('.thumb').forEach((th, j) => {
+          th.classList.toggle('active', j === i);
+        });
+      });
+      thumbsRow.appendChild(t);
+    });
+  }
+
+  // Clic sur la grande image = ouvrir lightbox
+  card.querySelector('.main-image-wrap').addEventListener('click', () => {
+    openLightbox(images, current);
+  });
+});
+
+// =============================================
+// LIGHTBOX
+// =============================================
+let lbImages = [];
+let lbIndex = 0;
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCounter = document.getElementById('lb-counter');
+
+function openLightbox(images, startIndex) {
+  lbImages = images;
+  lbIndex = startIndex || 0;
+  updateLightbox();
+  lightbox.classList.remove('hidden');
+  lightbox.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (e && e.target !== lightbox && e.target.id !== 'lightbox') return;
+  lightbox.classList.add('hidden');
+  lightbox.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+function lbNav(dir) {
+  lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+  updateLightbox();
+}
+
+function updateLightbox() {
+  lbImg.src = lbImages[lbIndex];
+  lbCounter.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+  document.getElementById('lb-prev').style.display = lbImages.length > 1 ? '' : 'none';
+  document.getElementById('lb-next').style.display = lbImages.length > 1 ? '' : 'none';
+}
+
+// Flèches clavier
+document.addEventListener('keydown', (e) => {
+  if (lightbox.classList.contains('hidden')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+});
+</script>
+
+</body>
+</html>
